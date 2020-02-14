@@ -5,9 +5,14 @@ body {
 }
 #navigation {
     background: rgb(9, 30, 78);
+    color: silver;
+    font-size: 40px;
     width: 100vw;
     height: 56px;
+    line-height: 56px;
+    padding-left: 10px;
 }
+
 
 .todo-main {
     background: rgb(210, 210, 210) ;
@@ -15,4 +20,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 150px;
+}
+.adding-task {
+   
 }
