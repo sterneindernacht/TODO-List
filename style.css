@@ -1,0 +1,18 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(0, 128, 128);
+}
+#navigation {
+    background: rgb(9, 30, 78);
+    width: 100vw;
+    height: 56px;
+}
+
+.todo-main {
+    background: rgb(210, 210, 210) ;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
