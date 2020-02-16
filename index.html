@@ -1,37 +1,46 @@
 <!doctype html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav id="navigation">ToDo-List</nav>
-        <div class="todos-head-text">
-            <h1 class="todos-text">todos</h1>
-        </div>
-        <div class="todo-main">
-            <h2>ToDo List</h2>
-            <form>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navigation">ToDo-List</nav>
+    <div class="todos-head-text">
+        <h1 class="todos-text">todos</h1>
+    </div>
+    <div class="todo-main">
+        <h2>ToDo List</h2>
+        <form>
             <div class="adding-task">
-               <div>
-                    <textarea id="new-task" cols="25" rows="1">New task</textarea>
-               </div>
-               <div>
-                     <button id="adding-button">Add</button>
-               </div>
-                
-
+                <div>
+                    <textarea class="new-task" cols="25" rows="1">New task</textarea>
+                </div>
+                <div>
+                    <button id="adding-button">Add</button>
+                </div>
             </div>
-            </form>
-            <div class="added-tasks">
-
-            </div>
-
+            <section>
+                <header>
+                    <h2>Tasks</h2>
+                    <form>
+                        <input class="new-task" type="search">
+                    </form>
+                </header>
+                <div class="todo-list" id="todoList">
+                    <!-- Here will get tasks-->
+                </div>
+            </section>
+        </form>
+        <div class="added-tasks">
         </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 
-        <script src="script.js"></script>
-    </body>
 </html>
