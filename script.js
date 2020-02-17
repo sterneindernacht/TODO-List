@@ -3,7 +3,18 @@ let todoForm = null;
 let todoSearch = null;
 
 function addTask(text) {
-    console.log("I'm adding new task to the list")
+    const todo = document.createElement("div");
+    todo.classList.add("all-tasks");
+
+    const todoBar = document.createElement("div");
+    todoBar.classList.add("todo-element-bar");
+
+    const todoDate = document.createElement("div");
+    todoDate.classList.add("todo-element-bar");
+    const date = new Date();
+    const dateText = `${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()} godz.: ${date.getHours()}
+    todoDate.innerText = dateText;
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
