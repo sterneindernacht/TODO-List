@@ -12,26 +12,31 @@ function addTask(text) {
     const todoDate = document.createElement("div");
     todoDate.classList.add("todo-element-bar");
     const date = new Date();
-    const dateText = `${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()} godz.: ${date.getHours()}
+    // const dateText = `${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()} godz.: ${date.getHours()}
     todoDate.innerText = dateText;
 
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const todoList = document.querySelector("#todoList");
-    const todoForm = document.querySelector("#todoForm");
-    const todoSearch = document.querySelector("#todoSearch");
+    const todoDelete = document.createElement("button");
+    todoDelete.classList.add("#button-delete");
+    todoDelete.classList.add("button")
+    todoDelete.innerHTML = "<i class="fas fa - trash - alt"></i>";
 
 
-    todoForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const taskInput = this.querySelector("#taskInput");
-        if (taskInput.value !== "") {
-            addTask(taskInput.value);
-            taskInput.value = "";
-        }
+    document.addEventListener("DOMContentLoaded", function () {
+        const todoList = document.querySelector("#todoList");
+        const todoForm = document.querySelector("#todoForm");
+        const todoSearch = document.querySelector("#todoSearch");
 
+
+        todoForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const taskInput = this.querySelector("#taskInput");
+            if (taskInput.value !== "") {
+                addTask(taskInput.value);
+                taskInput.value = "";
+            }
+
+
+        });
 
     });
-
-});
+}
