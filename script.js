@@ -3,40 +3,41 @@ let todoForm = null;
 let todoSearch = null;
 
 function addTask(text) {
-    const todo = document.createElement("div");
-    todo.classList.add("all-tasks");
 
-    const todoBar = document.createElement("div");
-    todoBar.classList.add("todo-element-bar");
+    const todoElementBar = document.createElement("div");
+    todoElementBar.classList.add("todo-element-bar");
 
-    const todoDate = document.createElement("div");
-    todoDate.classList.add("todo-element-bar");
-    const date = new Date();
-    // const dateText = `${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()} godz.: ${date.getHours()}
-    todoDate.innerText = dateText;
+    const divDate = document.createElement("div");
 
-    const todoDelete = document.createElement("button");
-    todoDelete.classList.add("#button-delete");
-    todoDelete.classList.add("button")
-    todoDelete.innerHTML = "<i class="fas fa - trash - alt"></i>";
+    const hDate = document.createElement("h6");
 
+    const divTask = document.createElement("div");
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const todoList = document.querySelector("#todoList");
-        const todoForm = document.querySelector("#todoForm");
-        const todoSearch = document.querySelector("#todoSearch");
+    const task = document.createElement("div");
+    task.classList.add("all-tasks");
 
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("all-tasks");
 
-        todoForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const taskInput = this.querySelector("#taskInput");
-            if (taskInput.value !== "") {
-                addTask(taskInput.value);
-                taskInput.value = "";
-            }
+    const iconDelete = document.createElement("i");
+    iconDelete.classList.add("fas fa-trash-alt");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const todoList = document.querySelector("#todoList");
+    const todoForm = document.querySelector("#todoForm");
+    const todoSearch = document.querySelector("#todoSearch");
 
 
-        });
+    todoForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const taskInput = this.querySelector("#taskInput");
+        if (taskInput.value !== "") {
+            addTask(taskInput.value);
+            taskInput.value = "";
+        }
+
 
     });
-}
+
+});
