@@ -11,6 +11,9 @@ function addTask(text) {
 
     const hDate = document.createElement("h6");
     hDate.setAttribute("id", "date");
+    const date = new Date();
+    const dateText = date.getDate + " " + date.getMonth + " " + date.getFullYear + " " + date.getHours + " " + date.getMinutes;
+    hDate.innerHTML = dateText;
 
     const divTask = document.createElement("div");
 
@@ -25,6 +28,14 @@ function addTask(text) {
 
     const iconDelete = document.createElement("i");
     iconDelete.classList.add("fas fa-trash-alt");
+
+    deleteButton.appendChild(iconDelete);
+    divDate.appendChild(hDate);
+    divTask.appendChild(task);
+    divTask.appendChild(deleteButton);
+    todoElementBar.appendChild(divDate);
+    todoElementBar.appendChild(divTask);
+    todoList.appendChild(todoElementBar);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
