@@ -12,7 +12,7 @@ function addTask(text) {
     const hDate = document.createElement("h6");
     hDate.setAttribute("id", "date");
     const date = new Date();
-    const dateText = date.getDate() + " " + date.getMonth() + " " + date.getFullYear() + " " + date.getHours() + " " + date.getMinutes();
+    const dateText = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
     hDate.innerHTML = dateText;
 
     const divTask = document.createElement("div");
@@ -29,7 +29,7 @@ function addTask(text) {
     deleteButton.title = "delete task";
 
     const iconDelete = document.createElement("i");
-    iconDelete.classList.add("fas fa-trash-alt");
+    iconDelete.classList.add("fas", "fa-trash-alt");
 
     deleteButton.appendChild(iconDelete);
     divDate.appendChild(hDate);
@@ -42,7 +42,7 @@ function addTask(text) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const todoList = document.querySelector("#todoList");
+    todoList = document.querySelector("#todoList");
     const todoForm = document.querySelector("#todoForm");
     const todoSearch = document.querySelector("#todoSearch");
 
