@@ -58,4 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    todoList.addEventListener("click", function (e) {
+        if (e.target.closest("#button-delete") !== null) {
+            e.target.closest(".todo-element-bar").remove();
+        }
+
+
+    });
+
+
 });
+
+
+
+
