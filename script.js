@@ -17,6 +17,12 @@ function addTask(text) {
 
     const divTask = document.createElement("div");
 
+    // TODO add checkbox for done task - 
+    const checkTask = document.createElement("checkbox");
+    checkTask.classList.add("all-tasks");
+    checkTask.setAttribute("id", "done-checkbox");
+
+
     const task = document.createElement("div");
     task.classList.add("all-tasks");
     task.setAttribute("id", "tasks-all");
@@ -34,6 +40,8 @@ function addTask(text) {
     deleteButton.appendChild(iconDelete);
     divDate.appendChild(hDate);
     divTask.appendChild(task);
+    divTask.appendChild(checkTask);
+    // TODO add checkbox for done task to divTask
     divTask.appendChild(deleteButton);
     todoElementBar.appendChild(divDate);
     todoElementBar.appendChild(divTask);
