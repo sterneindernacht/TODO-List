@@ -66,6 +66,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    todoSearch.addEventListener("input", function (e) {
+        const valueText = this.value;
+        const allElements = todoList.querySelectorAll(".todo-element-bar");
+
+        allElements.forEach(element => {
+            const text = element.querySelector("#tasks-all").innerText;
+
+            if (text.indexOf(valueText) !== -1) {
+                element.style.setProperty("display", "");
+
+            } else {
+                element.style.setProperty("display", "none");
+            }
+
+        });
+
+
+    });
+
 
 });
 
