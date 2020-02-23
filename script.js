@@ -55,6 +55,13 @@ function addTask(text) {
 
 }
 
+//function to clone added task to done tasks
+
+function doneTask() {
+
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     todoList = document.querySelector("#todoList");
     const todoForm = document.querySelector("#todoForm");
@@ -79,6 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
+
+
+    todoList.addEventListener("click", function (e) {
+        if (e.target.closest("#done-checkbox") !== null) {
+            e.target.closest(".todo-element-bar").remove();
+        }
+
+    })
 
     todoSearch.addEventListener("input", function (e) {
         const valueText = this.value;
