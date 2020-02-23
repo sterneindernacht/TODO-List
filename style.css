@@ -108,14 +108,24 @@ body {
 }
 
 #tasks-all {
-    width: 420px;
+    width: 400;
 }
 
 .all-tasks {
     font-size: 22px;
 }
 
+#done-checkbox {
+    width: 40px;
+    padding-right: 25px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px
+}
+
 #date {
-    margin: 19px 0 3px;
+    margin: 19px 13px 3px;
     padding-top: 25px;
 }
