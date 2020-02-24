@@ -4,56 +4,22 @@ let todoSearch = null;
 let doneList = null;
 
 function addTask(text) {
-
-    const todoElementBar = document.createElement("div");
-    todoElementBar.classList.add("todo-element-bar");
-
-    const divDate = document.createElement("div");
-
-    const hDate = document.createElement("h6");
-    hDate.setAttribute("id", "date");
     const date = new Date();
     const dateText = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
-    hDate.innerHTML = dateText;
 
-    const divTask = document.createElement("div");
-
-    const checkDiv = document.createElement("div");
-    checkDiv.classList.add("all-tasks");
-
-
-    const checkTask = document.createElement("input");
-    checkTask.classList.add("all-tasks");
-    checkTask.setAttribute("type", "checkbox");
-    checkTask.setAttribute("id", "done-checkbox");
-
-
-    const task = document.createElement("div");
-    task.classList.add("all-tasks");
-    task.setAttribute("id", "tasks-all");
-    task.innerHTML = text;
-
-
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("all-tasks");
-    deleteButton.setAttribute("id", "button-delete");
-    deleteButton.title = "delete task";
-
-    const iconDelete = document.createElement("i");
-    iconDelete.classList.add("fas", "fa-trash-alt");
-
-    deleteButton.appendChild(iconDelete);
-    divDate.appendChild(hDate);
-    checkDiv.appendChild(checkTask);
-    divTask.appendChild(checkTask);
-    divTask.appendChild(task);
-
-    divTask.appendChild(deleteButton);
-
-    todoElementBar.appendChild(divDate);
-    todoElementBar.appendChild(divTask);
-    todoList.appendChild(todoElementBar);
-
+    todoList.innerHTML = `
+    <div class="todo-element-bar">
+        <div>
+            <h6 id="date">${dateText}</h6></div>
+        <div>
+            <input class="all-tasks" type="checkbox" id="done-checkbox">
+            <div class="all-tasks" id="tasks-all">${text}</div>
+            <button class="all-tasks" id="button-delete" title="delete task">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </div>
+    ` + todoList.innerHTML;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -89,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.done-tasks').appendChild(
                 e.target.closest('.todo-element-bar')
             );
-            // addDoneTask(e.target.parentNode.querySelector("#tasks-all").innerText);
-            // e.target.closest(".todo-element-bar").remove();
+
         }
 
     })
